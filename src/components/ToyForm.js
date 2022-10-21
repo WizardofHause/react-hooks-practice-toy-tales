@@ -6,14 +6,14 @@ function ToyForm({ handleNewToy }) {
     image: '',
   })
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     setFormToy({
       ...formToy,
       [e.target.name]: e.target.value
     })
   }
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault()
     const inputToy = {
       name: formToy.name,
