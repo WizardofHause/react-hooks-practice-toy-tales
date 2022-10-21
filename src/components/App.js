@@ -15,11 +15,11 @@ function App() {
     .then((toys) => setToys(toys))
   }, [])
 
-  const handleClick = () => {
+  function handleClick() {
     setShowForm((showForm) => !showForm);
   }
 
-  const handleNewToy = (inputToy) => {
+  function handleNewToy(inputToy){
     setToys([inputToy, ...toys])
   }
 

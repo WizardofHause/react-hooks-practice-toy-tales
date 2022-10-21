@@ -6,19 +6,19 @@ function ToyForm({ handleNewToy }) {
     image: '',
   })
 
-  const handleChange = (e) => {
+  function handleChange(e) {
     setFormToy({
       ...formToy,
       [e.target.name]: e.target.value
     })
   }
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault()
     const inputToy = {
       name: formToy.name,
       image: formToy.image,
-      likes: 0
+      likes: 0,
     }
     fetch('http://localhost:3001/toys', {
       method: "POST",
@@ -28,7 +28,7 @@ function ToyForm({ handleNewToy }) {
       body: JSON.stringify(inputToy)
     })
       .then((r) => r.json())
-      .then(handleNewToy(inputToy))
+      .then(handleNewToy)
       setFormToy({
         name: '',
         image: '',
